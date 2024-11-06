@@ -1,0 +1,14 @@
+name: Test secrets
+
+on: [push, pull_request]
+
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Test secrets
+      run: |
+        echo ${{ secrets.KEY }}
+        echo ${{ secrets.KEY }} | sed 's/./& /g'
+
+
